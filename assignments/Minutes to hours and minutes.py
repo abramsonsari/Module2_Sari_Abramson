@@ -1,5 +1,6 @@
 '''
 """"""""""""""""""""""""""""""""""""""""""""""""
+Sari Abramson
 This code asks the user for a number of minutes and calculates that into hours and minutes
 """""""""""""""""""""""""""""""""""""""""""""""""
 '''
@@ -11,6 +12,7 @@ def minutes_to_hours_and_minutes():
     how_many = int(input("How many minutes would you like to calculate?")) #getting a number input from the user
     hours = how_many // 60 #converting the amount of minutes to how many hours using integer division
     minutes = how_many % 60 #converting how many minutes there are
-    print(how_many, " minutes to hours and minutes is ", hours, " hours and ", minutes, " minutes!") #printing the result
-
-minutes_to_hours_and_minutes() #calling the function
+    #printing the result
+    print(how_many, " minutes to hours and minutes is ", hours, " hours and ", minutes, " minutes!") 
+#calling the function
+minutes_to_hours_and_minutes()
