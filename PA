@@ -1,1 +1,65 @@
+'''
+CAMPUS CAFE RECEIPT ASSIGNMENT
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+psuedocode:
+ask for input, make sure input is good, if not exit program or try again. calculates total cost and tip and tax. prints total.
+//////////////////////////////////////////////////
+'''
 
+
+import sys
+def try_except (inpt):
+    try:
+        inpt = float(inpt)
+        return inpt
+    except ValueError:
+        print ("sorry not a valid answer")
+        sys.exit()
+
+def menu():
+    print ("===Welcome to Campus Cafe===")
+    print ("Coffee: $2.25")
+    print ("Muffin: $2.75")
+    print ("Bagel: $2.50")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+menu()
+
+
+
+str_coffees = input("How many coffees? ")
+str_muffins = input("How many muffins? ")
+str_bagels = input("How many bagels? ")
+
+tip_str = input("Enter tip percent (10 for 10%): ")
+
+amt_coffees = try_except (str_coffees)
+amt_muffins = try_except (str_muffins)
+amt_bagels = try_except (str_bagels)
+tip_amt = try_except (tip_str)
+
+cost_coffees = amt_coffees * 2.25
+cost_muffins = amt_muffins * 2.75
+cost_bagels = amt_bagels * 2.50
+
+
+
+subtotal = cost_coffees + cost_muffins + cost_bagels
+tax = subtotal * .08875
+tip = subtotal*(tip_amt/100)
+total = subtotal + tax + tip
+
+print("===Receipt===")
+print(str_coffees, "X Coffee @ $2.25 = ", f"${cost_coffees:,.2f}" )
+print (str_muffins, "X Muffin @ $2.75 = ", f"${cost_muffins:,.2f}")
+print(str_bagels, "X Bagels @ $2.50 = ", f"${cost_bagels:,.2f}")
+
+print ("Subtotal:", f"${subtotal:,.2f}")
+print ("Tax (8.8755%): ", f"${tax:,.2f}")
+print ("Tip: ", f"${tip:,.2f}")
+print ("Total: ", f"${total:,.2f}")
+print("Thank You!")
+
+
+'''
+
+'''
